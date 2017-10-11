@@ -3,17 +3,29 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="letra1" sid="166612620266347" static="0" type="text"></variable>
         <event-block sid="198872582783563">
             <conditions>
-                <condition id="3" name="On touched object" sid="944099202330622" type="Touch">
-                    <param id="0" name="Object">Sprite</param>
+                <condition id="17" name="On tap object" sid="633170674113567" type="Touch">
+                    <param id="0" name="Object">A</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Go to layout" sid="949454753757991" type="System">
-                    <param id="0" name="Layout">Layout 2</param>
+                <action id="-9" name="Set value" sid="944792277874492" type="System">
+                    <param id="0" name="Variable">letra1</param>
+                    <param id="1" name="Value">choose(&quot;A&quot;,&quot;E&quot;)</param>
+                </action>
+                <action id="10" name="Load image from URL" sid="507437671457002" type="RandomLetter1">
+                    <param id="0" name="URI">letra1&amp;&quot;.png&quot;</param>
+                    <param id="1" name="Size">1</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="961379284205176">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="541555690921244" type="System" />
+            </conditions>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>

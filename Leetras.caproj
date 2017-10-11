@@ -12,6 +12,7 @@
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
@@ -48,24 +49,6 @@
             <plugin id="TiledBg" />
             <texture original-source="C:\Users\joseo\Desktop\Tile2.png" />
         </object-type>
-        <object-type name="Sprite" sid="706619254893802">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="390535724441026" speed="5">
-                    <frame duration="1" hotspotX="0.486188" hotspotY="2.53125" original-source="C:\Users\joseo\Desktop\A.png">
-                        <collision-poly>
-                            <point x="0.485754" y="0" />
-                            <point x="1" y="0.370744" />
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0.485754" y="1" />
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Touch" sid="822462379621412">
             <plugin id="Touch" />
         </object-type>
@@ -74,6 +57,82 @@
         </object-type>
         <object-type name="Button" sid="332753827776119">
             <plugin id="Button" />
+        </object-type>
+        <object-type name="A" sid="341471950989524">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="452648824252898" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\joseo\Documents\webProjects\luducacion\leetras\Files\A.png">
+                        <collision-poly>
+                            <point x="0.309524" y="0.308394" />
+                            <point x="0.5" y="0.0729927" />
+                            <point x="0.690476" y="0.308394" />
+                            <point x="0.860806" y="0.861314" />
+                            <point x="0.5" y="0.618613" />
+                            <point x="0.163004" y="0.837591" />
+                            <point x="0.230769" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SpriteFont" sid="944656945116917">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="RandomLetter1" sid="556858984317864">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="496106248283851" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\joseo\Documents\webProjects\luducacion\leetras\Files\A.png">
+                        <collision-poly>
+                            <point x="0.309524" y="0.308394" />
+                            <point x="0.5" y="0.0729927" />
+                            <point x="0.690476" y="0.308394" />
+                            <point x="0.860806" y="0.861314" />
+                            <point x="0.5" y="0.618613" />
+                            <point x="0.163004" y="0.837591" />
+                            <point x="0.230769" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="RandomLetter2" sid="259255777560310">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="306697510405402" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\joseo\Documents\webProjects\luducacion\leetras\Files\A.png">
+                        <collision-poly>
+                            <point x="0.309524" y="0.308394" />
+                            <point x="0.5" y="0.0729927" />
+                            <point x="0.690476" y="0.308394" />
+                            <point x="0.860806" y="0.861314" />
+                            <point x="0.5" y="0.618613" />
+                            <point x="0.163004" y="0.837591" />
+                            <point x="0.230769" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="RandomLetter3" sid="458682215516078">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="125767953687733" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\joseo\Documents\webProjects\luducacion\leetras\Files\A.png">
+                        <collision-poly>
+                            <point x="0.309524" y="0.308394" />
+                            <point x="0.5" y="0.0729927" />
+                            <point x="0.690476" y="0.308394" />
+                            <point x="0.860806" y="0.861314" />
+                            <point x="0.5" y="0.618613" />
+                            <point x="0.163004" y="0.837591" />
+                            <point x="0.230769" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
@@ -103,8 +162,8 @@
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
         </file-folder>
-        <file-folder name="Pictures">
-            <file name="A.png" />
-        </file-folder>
+        <file-folder name="Pictures" />
+        <file name="E.png" />
+        <file name="A.png" />
     </files-folder>
 </c2project>
