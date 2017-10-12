@@ -134,15 +134,23 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="IntentaDeNuevo" sid="159482705919238">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Ok" sid="210625487990433">
+            <plugin id="Button" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
         <layout>Layout 2.xml</layout>
+        <layout>Intenta de Nuevo.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Event sheet 2.xml</event-sheet>
+        <event-sheet>Event sheet 3.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="2">
