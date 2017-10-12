@@ -173,5 +173,7 @@
         <file-folder name="Pictures" />
         <file name="E.png" />
         <file name="A.png" />
+        <file name="O.png" />
+        <file name="I.png" />
     </files-folder>
 </c2project>

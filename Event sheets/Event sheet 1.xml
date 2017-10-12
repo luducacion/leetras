@@ -4,6 +4,9 @@
     <name>Event sheet 1</name>
     <events>
         <variable constant="0" name="letra1" sid="166612620266347" static="0" type="text"></variable>
+        <variable constant="0" name="letra2" sid="580182699085350" static="0" type="text"></variable>
+        <variable constant="0" name="letra3" sid="470361199251369" static="0" type="text"></variable>
+        <variable constant="0" name="letra4" sid="362764828670549" static="0" type="text"></variable>
         <event-block sid="198872582783563">
             <conditions>
                 <condition id="17" name="On tap object" sid="633170674113567" type="Touch">
@@ -25,7 +28,36 @@
             <conditions>
                 <condition id="-2" name="On start of layout" sid="541555690921244" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="-9" name="Set value" sid="639434025771221" type="System">
+                    <param id="0" name="Variable">letra2</param>
+                    <param id="1" name="Value">choose(&quot;A&quot;,&quot;E&quot;,&quot;I&quot;,&quot;O&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="352049389886355" type="System">
+                    <param id="0" name="Variable">letra3</param>
+                    <param id="1" name="Value">choose(&quot;A&quot;,&quot;E&quot;,&quot;I&quot;,&quot;O&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="782117428029992" type="System">
+                    <param id="0" name="Variable">letra4</param>
+                    <param id="1" name="Value">choose(&quot;A&quot;,&quot;E&quot;,&quot;I&quot;,&quot;O&quot;)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="555274443995080">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="981149086149889" type="System">
+                            <param id="0" name="Variable">letra1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;A&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Rotate clockwise" sid="586938435304863" type="RandomLetter1">
+                            <param id="0" name="Degrees">40</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
