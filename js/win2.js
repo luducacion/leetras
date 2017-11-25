@@ -10,6 +10,6 @@ var winState2 = {
 	},
 
 	restart: function() {
-		game.state.start('play2');
+		game.state.start('lee');
 	},
 };

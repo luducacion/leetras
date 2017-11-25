@@ -11,6 +11,6 @@ var loseState2 = {
 	},
 
 	restart: function() {
-		game.state.start('play2');
+		game.state.start('escucha');
 	},
 };
