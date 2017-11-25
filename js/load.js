@@ -1,12 +1,11 @@
 
-var myMap = new Map();
 var letterImageKeys = ['A','E','I','O','E','F','G','H','I','K','L'];
 
-var loadState = {
+class loadState {
 
 	// The preload function is another standard Phaser function that we
 	// use to define and load our assets
-	preload: function() {
+	preload() {
 		var loadingLabel = game.add.text(80, 150, 'loading...', {font: '30px Courier', fill: '#ffffff'});
 
 		// Load all assets. The first parameter is the variable that 
@@ -27,10 +26,10 @@ var loadState = {
 		game.load.audio('U', 'assets/audio/U.m4a');
 		game.load.audio('encuentra', 'assets/audio/encuentra.m4a');
 
-	},
+	}
 
-	create: function() {
+	create() {
 		// Call the menu state
 		game.state.start('menu');
 	}
-};
+}

@@ -9,9 +9,9 @@ const LETTER_VELOCITY = 230,
 var score = 0;
 var scoreText;
 
-
-var playState3 = {
-    create: function() {
+class avalancha {
+    
+    create() {
 
         game.physics.setBoundsToWorld();
 
@@ -41,21 +41,21 @@ var playState3 = {
         // Initializing the score and scoretext
         scoreText = this.add.text(16, 16, 'Puntaje: 0', { fontSize: '32px', fill: '#F0F'});
         
-    },
+    }
     
-    update: function() {
+    update() {
         this.game.debug.pointer(this.game.input.activePointer);
-    },
+    }
 
     // Timer's method. Is called every 2 seconds
-    updateCounter: function() { 
+    updateCounter() { 
         total++;
         // Create new letter, make it move vertically down
         this.addLetter();
-    },
+    }
 
     // Creates a new downward moving letter sprite at the top of the screen
-    addLetter: function() {
+    addLetter() {
         var letterIndex = randomLetter();
         var nletter = letters.create(20 + Math.random() * (game.world.width-100), -55, letterImageKeys[letterIndex]);
         nletter.name = 'letter' + total.toString();
@@ -68,10 +68,10 @@ var playState3 = {
         nletter.events.onInputDown.add(this.letterOnClick, this, nletter);
         nletter.body.velocity.y = LETTER_VELOCITY;
         console.log("Added letter with letterIndex " + nletter.data.letterId);
-    },
+    }
 
     // Triggered when a letter is clicked.
-    letterOnClick: function(sprite) {
+    letterOnClick(sprite) {
         console.log("You clicked to destroy a letter.");
         console.log("chosenLetter3 is " + chosenLetter3 + " and sprite.letterId is " + sprite.letterId);
         if (sprite.letterId == chosenLetter3) {
@@ -81,9 +81,9 @@ var playState3 = {
         }
         sprite.destroy();
         this.updateScoreText();
-    },
+    }
 
-    updateScoreText: function() {
+    updateScoreText() {
         scoreText.text = 'Puntaje: ' + score;
         if (score < 0) {
             scoreText.fill = 'red';
@@ -93,11 +93,7 @@ var playState3 = {
         if (score >= 200) {
             this.Win();
         }
-    },
-
-    Win: function() {
-        game.state.start('win');
-    },
+    }
 
 };
 

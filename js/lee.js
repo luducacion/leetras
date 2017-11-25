@@ -1,10 +1,6 @@
-var chosenLetter;
-
-var sounds = {} ;
-
-var playState1 = {
+class lee {
 	
-	create: function() {
+	create() {
 
 		var positions = [
 			[20,30],
@@ -32,11 +28,11 @@ var playState1 = {
 		
 			var totalLetters = (highestLetter - lowestLetter)+1;
 
-		chosenLetter = randomLetter();
+		chosenLetter = Random.randomLetter(lowestLetter, highestLetter);
 		
 		var currentLetter = chosenLetter;
 
-		var firstPosition = randomLetter();
+		var firstPosition = Random.randomLetter(lowestLetter, highestLetter);
 		
 		for (var i = 0; i < 4; i++) {
 			
@@ -55,16 +51,10 @@ var playState1 = {
 			firstPosition = (firstPosition + 1)%totalLetters;
 		}
 
-		this.start();
-	},
+		this.start(sounds, chosenLetter);
+	}
 
-
-	Win: function() {
-		
-		game.state.start('win');
-	},
-
-	verify: function(sprite, pointer) {
+	verify(sprite, pointer) {
 		
 		if (sprite.z == 0) {
 			// Winning letter
@@ -75,9 +65,9 @@ var playState1 = {
 			// Wrong letter
 			game.state.start('lose');
 		}
-	},
+	}
 	
-	start: function () {
+	start() {
 		
 			sounds['encuentra'].play();
 			
