@@ -10,6 +10,6 @@ var winState2 = {
 	},
 
 	restart: function() {
-		game.state.start('lee');
+		game.state.start('escucha');
 	},
 };
