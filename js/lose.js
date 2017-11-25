@@ -11,6 +11,6 @@ class loseState {
 	}
 
 	restart() {
-		game.state.start('play');
+		game.state.start('lee');
 	}
 };
