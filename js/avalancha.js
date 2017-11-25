@@ -4,10 +4,12 @@ var total = 0;
 var chosenLetter3; // The letter to look for in this particular game.
 var letters;
 const RIGHT = 0, LEFT = 1;
-const LETTER_VELOCITY = 230,
-      SPAWN_TIME = 400; // The time win between each letter spawns
+const LETTER_VELOCITY = 140,
+      SPAWN_TIME = 600; // The time win between each letter spawns
 var score = 0;
 var scoreText;
+var lowestLetter = 0,
+            highestLetter = 3;
 
 class avalancha {
     
@@ -19,14 +21,13 @@ class avalancha {
         letters.enableBody = true;
         letters.physicsBodyType = Phaser.Physics.ARCADE;
         var letter;
-        var lowestLetter = 0,
-            highestLetter = 3;
+        
         var totalLetters = (highestLetter - lowestLetter)+1;
 
-        chosenLetter3 = randomLetter();
+        chosenLetter3 = Random.randomLetter(lowestLetter, highestLetter);
         var currentLetter = chosenLetter3;
 
-        var firstPosition = randomLetter();
+        var firstPosition = Random.randomLetter(lowestLetter, highestLetter);
         var winLabel = game.add.text(game.world.centerX, game.world.height-80, 'Encuentra la '+letterImageKeys[currentLetter], {font: '50px Times New Roman', fill: '#00FF00'});
 
         this.game.debug.text(`Debugging Phaser ${Phaser.VERSION}`, 20, 20, 'yellow', 'Segoe UI');
@@ -44,7 +45,6 @@ class avalancha {
     }
     
     update() {
-        this.game.debug.pointer(this.game.input.activePointer);
     }
 
     // Timer's method. Is called every 2 seconds
@@ -56,8 +56,8 @@ class avalancha {
 
     // Creates a new downward moving letter sprite at the top of the screen
     addLetter() {
-        var letterIndex = randomLetter();
-        var nletter = letters.create(20 + Math.random() * (game.world.width-100), -55, letterImageKeys[letterIndex]);
+        var letterIndex = Random.randomLetter(lowestLetter, highestLetter);
+        var nletter = letters.create(20 + Math.random() * (game.world.width-100), -70, letterImageKeys[letterIndex]);
         nletter.name = 'letter' + total.toString();
         nletter.checkWorldBounds = true;
         nletter.events.onOutOfBounds.add(function (sprite) {
