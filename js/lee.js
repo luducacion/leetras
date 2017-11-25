@@ -9,7 +9,7 @@ class lee {
 			[500,350]
 		];
 
-		sounds = {
+		var sounds = {
 			
 			'A' : game.add.audio('A'),
 			'E' : game.add.audio('E'),
@@ -28,7 +28,7 @@ class lee {
 		
 			var totalLetters = (highestLetter - lowestLetter)+1;
 
-		chosenLetter = Random.randomLetter(lowestLetter, highestLetter);
+		var chosenLetter = Random.randomLetter(lowestLetter, highestLetter);
 		
 		var currentLetter = chosenLetter;
 
@@ -67,7 +67,7 @@ class lee {
 		}
 	}
 	
-	start() {
+	start(sounds, chosenLetter) {
 		
 			sounds['encuentra'].play();
 			
