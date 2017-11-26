@@ -7,11 +7,14 @@ class escucha {
 
 	create() {
 
+		var XTiles = game.world.width / 10;
+		var YTiles = game.world.height / 10;
+
 		var positions = [
-			[50, 200],
-			[200,200],
-			[350,200],
-			[500,200]
+			[3 * XTiles, 4 * YTiles],
+			[4 * XTiles, 4 * YTiles],
+			[5 * XTiles, 4 * YTiles],
+			[6 * XTiles, 4 * YTiles]
 		];
 
 		 
@@ -51,7 +54,7 @@ class escucha {
 			
 			if (i == 0) {
 				
-				var instructionLabel = game.add.text(game.world.centerX - 160 , game.world.height-80, 'Encuentra la letra ' + this.letterImageKeys[currentLetter], {fontSize: '50px', fill: '#FFFFFF'});
+				var instructionLabel = game.add.text(game.world.width - 500 , game.world.height-80, 'Encuentra la letra ' + this.letterImageKeys[currentLetter], {fontSize: '50px', fill: '#FFFFFF'});
 			
 			}
 			

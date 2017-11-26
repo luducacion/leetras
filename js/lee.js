@@ -46,7 +46,7 @@ class lee {
 			
 			if (i == 0) {
 				
-				var instructionLabel = game.add.text(game.world.centerX - 160 , game.world.height-80, 'Encuentra la letra ' + this.letterImageKeys[currentLetter], {fontSize: '50px', fill: '#FFFFFF'});
+				var instructionLabel = game.add.text(game.world.width - 500 , game.world.height-80, 'Encuentra la letra ' + this.letterImageKeys[currentLetter], {fontSize: '50px', fill: '#FFFFFF'});
 			}
 		
 			// Enable input
