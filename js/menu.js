@@ -1,7 +1,7 @@
 class menuState {
 	
 	create() {
-		
+		console.log(scaleRatio);
 		var background = game.add.tileSprite(game.world.centerX, game.world.centerY, game.world.width, game.world.height, 'tiledBackground');
 		background.anchor.setTo(0.5,0.5);
 		

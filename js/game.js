@@ -1,8 +1,5 @@
-
-
 var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, 'gameDiv');
-
-var scaleRatio = window.devicePixelRatio / 3;
+var scaleRatio = 0;
 // Here we add each state. We give it a casual name that we use when 
 // calling it (i.e. 'boot'), and an official name that we use when
 // defining it (i.e. bootState), as you'll see in the boot.js file
