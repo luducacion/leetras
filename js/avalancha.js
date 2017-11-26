@@ -34,7 +34,7 @@ class avalancha {
 
         var firstPosition = Random.randomLetter(this.lowestLetter, this.highestLetter);
 
-        var winLabel = game.add.text(game.world.centerX, game.world.height-80, 'Encuentra la '+this.letterImageKeys[currentLetter], {font: '50px Times New Roman', fill: '#00FF00'});
+        var instructionLabel = game.add.text(game.world.centerX - 160 , game.world.height-80, 'Encuentra la letra ' + this.letterImageKeys[this.chosenLetter], {fontSize: '50px', fill: '#FFFFFF'});
 
         this.timer = game.time.create(false);
 
