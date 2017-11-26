@@ -39,7 +39,14 @@ class escucha {
 		for (var i = 0; i < 4; i++) {
 
 			var letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], "questionMark"+(currentQuestionBlock+1));
-			var soundButton = game.add.button(positions[firstPosition][0] + 30, positions[firstPosition][1] + 100, 'win')
+
+			letter.inputEnabled = true;
+			
+			letter.input.start(0, true);
+			
+			letter.events.onInputUp.add(this.verify, this, 0, this.levelData);
+
+			var soundButton = game.add.button(positions[firstPosition][0], positions[firstPosition][1] + 100, 'speaker');
 			
 			if (i == 0) {
 				
@@ -50,12 +57,6 @@ class escucha {
 			soundButton.name = this.letterImageKeys[currentLetter];
 			
 			soundButton.onInputUp.add((button)=> this.sounds[button.name].play() ,this);
-
-			letter.inputEnabled = true;
-			
-			letter.input.start(0, true);
-			
-			letter.events.onInputUp.add(this.verify, this, 0, this.levelData);
 
 			currentLetter = (currentLetter + 1)%totalLetters;
 			

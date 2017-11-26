@@ -24,6 +24,7 @@ class loadState {
 		game.load.image('questionMark2', 'assets/questionMark2.png');
 		game.load.image('questionMark3', 'assets/questionMark3.png');
 		game.load.image('questionMark4', 'assets/questionMark4.png');
+		game.load.image('speaker', 'assets/speaker.png');
 		game.load.audio('A', 'assets/audio/A.m4a');
 		game.load.audio('E', 'assets/audio/E.m4a');
 		game.load.audio('I', 'assets/audio/I.m4a');
