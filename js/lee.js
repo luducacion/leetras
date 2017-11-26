@@ -45,12 +45,15 @@ class lee {
 		for (var i = 0; i < 4; i++) {
 			
 			letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], this.letterImageKeys[currentLetter], undefined, undefined, i);
+			
 			letter.scale.setTo(scaleRatio, scaleRatio);
+			letter.anchor.setTo(0.5, 0.5);
+			
 			if (i == 0) {
 				
 				var instructionLabel = game.add.text(game.world.width - 500 , game.world.height-80, 'Encuentra la letra ' + this.letterImageKeys[currentLetter], {fontSize: '50px', fill: '#FFFFFF'});
 				instructionLabel.scale.setTo(scaleRatio, scaleRatio);
-				
+
 			}
 		
 			// Enable input
