@@ -11,8 +11,7 @@ class loadState {
 		// Load all assets. The first parameter is the variable that 
 		// will point to the image, and the second parameter is the 
 		// image file itself.
-		game.load.image('startButton', 'assets/img/startButton.png');
-		game.load.image('tiledBackground', 'assets/img/tiledBackground.png');
+		game.load.image('tiledBackground', 'assets/img/tiledBackground.gif');
 		game.load.image('A', 'assets/img/A.png');
 		game.load.image('E', 'assets/img/E.png');
 		game.load.image('I', 'assets/img/I.png');
