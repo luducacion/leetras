@@ -34,7 +34,8 @@ class menuState {
 		startGame3.selectedGame = "avalancha";
 		startGame3.anchor.x = 0.5;
 		startGame3.anchor.y = 0.5;
-		startGame3.onInputDown.add((button) => game.state.start(button.selectedGame),this);
+		startGame3.levelData = {"currentGame": "avalancha", "currentLevel": 0};
+		startGame3.onInputDown.add((button) => game.state.start('gameMaster', true, false, startGame3.levelData),this);
 	}
 
 	

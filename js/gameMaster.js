@@ -8,8 +8,6 @@ class gameMaster {
 	create(){
 
 		var currentGame = this.levelData.currentGame;
-
-		console.log(currentLevel);
 		
 		var currentLevel = this.levelData.currentLevel;
 
