@@ -8,7 +8,7 @@ class menuState {
 		// first two parameters are x and y positional values, then the
 		// actual text, and then the 'font' defines the font (of course)
 		// and 'fill' refers to the font color.
-		var nameLabel = game.add.text(80, 80, 'Bienvenido al Juego', 
+		var nameLabel = game.add.text(game.world.centerX -160, 80, 'L E E T R A S', 
 									{ font: '50px Arial', fill: '#ffffff'});
 
 		// Start Game 1
