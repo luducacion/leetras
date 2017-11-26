@@ -12,7 +12,7 @@ class menuState {
 									{ font: '50px Arial', fill: '#ffffff'});
 
 		// Start Game 1
-		var startGame1 = game.add.button(game.world.centerX - 100 , game.world.centerY, 'startButton');
+		var startGame1 = game.add.button(game.world.centerX - 100 , game.world.centerY, 'lee');
 		startGame1.selectedGame = "lee";
 		startGame1.anchor.x = 0.5;
 		startGame1.anchor.y = 0.5;
@@ -22,7 +22,7 @@ class menuState {
 
 
 		// Start Game 2
-		var startGame2 = game.add.button(game.world.centerX + 100, game.world.centerY, 'startButton');
+		var startGame2 = game.add.button(game.world.centerX + 100, game.world.centerY, 'escucha');
 		startGame2.selectedGame = "escucha";
 		startGame2.anchor.x = 0.5;
 		startGame2.anchor.y = 0.5;
@@ -30,7 +30,7 @@ class menuState {
 		startGame2.onInputDown.add((button) => game.state.start('gameMaster', true, false, startGame2.levelData),this);
 
 		// Start Game 3
-		var startGame3 = game.add.button(game.world.centerX, game.world.centerY + 100, 'startButton');
+		var startGame3 = game.add.button(game.world.centerX, game.world.centerY + 100, 'avalancha');
 		startGame3.selectedGame = "avalancha";
 		startGame3.anchor.x = 0.5;
 		startGame3.anchor.y = 0.5;
