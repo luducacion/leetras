@@ -8,7 +8,7 @@ class bootState {
 
 		if(this.game.device.android) {
 
-			scaleRatio = window.devicePixelRatio / 3;
+			scaleRatio = window.devicePixelRatio / 5;
 
 		}else if(this.game.device.desktop) {
 

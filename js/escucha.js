@@ -46,6 +46,8 @@ class escucha {
 			var letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], "questionMark"+(currentQuestionBlock+1));
 			
 			letter.scale.setTo(scaleRatio, scaleRatio);
+
+			letter.anchor.setTo(0.5, 0.5);
 			
 			letter.inputEnabled = true;
 			
@@ -65,6 +67,7 @@ class escucha {
 			
 			soundButton.name = this.letterImageKeys[currentLetter];
 			
+			
 			soundButton.onInputUp.add((button)=> this.sounds[button.name].play() ,this);
 
 			currentLetter = (currentLetter + 1)%totalLetters;
@@ -77,7 +80,7 @@ class escucha {
 
 		this.scoreText = this.add.text(16, 16, 'Puntaje: ' + this.levelData.score, { fontSize: '32px', fill: '#FFFFFF'});
 		this.scoreText.scale.setTo(scaleRatio, scaleRatio);
-		
+
 		if (this.levelData.score < 0) {
 
 			this.scoreText.fill = 'red';
