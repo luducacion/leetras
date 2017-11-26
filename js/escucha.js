@@ -24,18 +24,18 @@ class escucha {
 		var lowestLetter = 0;
 		var highestLetter = this.levelData.numberOfLetters - 1;
 		
-		var totalLetters = highestLetter + 1;
+		var totalLetters = highestLetter;
 
 		this.chosenLetter = Random.randomLetter(lowestLetter, highestLetter);
 		
 		var currentLetter = this.chosenLetter;
 
-		var firstPosition = Random.randomLetter(lowestLetter, highestLetter);
+		var firstPosition = Random.randomLetter(lowestLetter, highestLetter-1);
 		
 		for (var i = 0; i < 4; i++) {
 
 			var letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], this.letterImageKeys[currentLetter]);
-			var soundButton = game.add.button(positions[firstPosition][0] + 20, positions[firstPosition][1] + 100, 'win')
+			var soundButton = game.add.button(positions[firstPosition][0] + 30, positions[firstPosition][1] + 100, 'win')
 			
 			if (i == 0) {
 				
@@ -51,7 +51,7 @@ class escucha {
 			
 			letter.input.start(0, true);
 			
-			letter.events.onInputUp.add(this.verify);
+			letter.events.onInputUp.add(this.verify, this, 0, this.levelData);
 
 			currentLetter = (currentLetter + 1)%totalLetters;
 			
@@ -69,12 +69,12 @@ class escucha {
 			
 			// Winning letter
 			
-			game.state.start('win2');
+			game.state.start('win', true, false, arguments[3]);
 		} else {
 			
 			// Wrong letter
 			
-			game.state.start('lose2');
+			game.state.start('lose', true, false, arguments[3]);
 		}
 	}
 
