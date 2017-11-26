@@ -14,7 +14,6 @@ game.state.add('lee', lee);
 game.state.add('escucha', escucha);
 game.state.add('avalancha', avalancha);
 game.state.add('win', winState);
-game.state.add('lose', loseState);
 
 // After all of the estates are added, we start the game by calling the
 // boot state
