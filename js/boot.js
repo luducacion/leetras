@@ -5,11 +5,12 @@ class bootState {
 		// Starting the physics system - in this case we are using the
 		// simple (but effective) ARCADE physics engine
 		game.physics.startSystem(Phaser.Physics.Arcade);
-		if(this.game.device.cordova) {
+
+		if(this.game.device.android) {
 
 			scaleRatio = window.devicePixelRatio / 3;
 
-		}else if(this.game.device.desktop == true) {
+		}else if(this.game.device.desktop) {
 
 			scaleRatio = window.devicePixelRatio / 1;
 

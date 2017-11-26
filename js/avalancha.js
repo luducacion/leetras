@@ -14,7 +14,10 @@ class avalancha {
         this.SPAWN_TIME = 600; // The time window between each letter spawn
 
         game.physics.setBoundsToWorld();
+
         var background = game.add.sprite(0,0,'background1');
+        background.scale.setTo(scaleRatio, scaleRatio);
+
         this.letters = game.add.group();
         this.letters.enableBody = true;
         this.letters.physicsBodyType = Phaser.Physics.ARCADE;
@@ -35,11 +38,13 @@ class avalancha {
         var firstPosition = game.rnd.integerInRange(this.lowestLetter, this.highestLetter);
 
         var instructionLabel = game.add.text(game.world.width - 500 , game.world.height-80, 'Encuentra la letra ' + this.letterImageKeys[this.chosenLetter], {fontSize: '50px', fill: '#FFFFFF'});
+        instructionLabel.scale.setTo(scaleRatio, scaleRatio);
 
         this.timer = game.time.create(false);
 
         // Initializing the score and scoretext
         this.scoreText = this.add.text(16, 16, 'Puntaje: ' + this.levelData.score, { fontSize: '32px', fill: '#FFFFFF'});
+        this.scoreText.scale.setTo(scaleRatio, scaleRatio);
 
         this.start();
         
@@ -72,6 +77,8 @@ class avalancha {
         
         var nletter = this.letters.create(20 + Math.random() * (game.world.width-100), -70, this.letterImageKeys[letterIndex]);
         
+        nletter.scale.setTo(scaleRatio, scaleRatio);
+
         nletter.checkWorldBounds = true;
         
         nletter.events.onOutOfBounds.add( (sprite) => { sprite.destroy(); });

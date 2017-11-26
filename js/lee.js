@@ -20,7 +20,9 @@ class lee {
 			[game.rnd.integerInRange(game.world.width/2 + 10, game.world.width - (LETTER_WIDTH + 10)),
 				game.rnd.integerInRange(game.world.height/2 + 10, game.world.height - (LETTER_HEIGHT + 80))]
 		];
-        var background = game.add.sprite(0,0,'background1');
+
+		var background = game.add.sprite(0,0,'background1');
+		background.scale.setTo(scaleRatio, scaleRatio);
 		
 		this.sounds = this.levelData.sounds;
 		
@@ -43,10 +45,12 @@ class lee {
 		for (var i = 0; i < 4; i++) {
 			
 			letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], this.letterImageKeys[currentLetter], undefined, undefined, i);
-			
+			letter.scale.setTo(scaleRatio, scaleRatio);
 			if (i == 0) {
 				
 				var instructionLabel = game.add.text(game.world.width - 500 , game.world.height-80, 'Encuentra la letra ' + this.letterImageKeys[currentLetter], {fontSize: '50px', fill: '#FFFFFF'});
+				instructionLabel.scale.setTo(scaleRatio, scaleRatio);
+				
 			}
 		
 			// Enable input
@@ -60,6 +64,7 @@ class lee {
 		}
 
 		this.scoreText = this.add.text(16, 16, 'Puntaje: ' + this.levelData.score, { fontSize: '32px', fill: '#FFFFFF'});
+		this.scoreText.scale.setTo(scaleRatio, scaleRatio);
 
 		if (this.levelData.score < 0) {
 

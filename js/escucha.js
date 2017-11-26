@@ -18,7 +18,8 @@ class escucha {
 		];
 
 		 
-        var background = game.add.sprite(0,0,'background1');
+		var background = game.add.sprite(0,0,'background1');
+		background.scale.setTo(scaleRatio, scaleRatio);
 
 		this.sounds = this.levelData.sounds;
 
@@ -43,7 +44,9 @@ class escucha {
 		for (var i = 0; i < 4; i++) {
 
 			var letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], "questionMark"+(currentQuestionBlock+1));
-
+			
+			letter.scale.setTo(scaleRatio, scaleRatio);
+			
 			letter.inputEnabled = true;
 			
 			letter.input.start(0, true);
@@ -51,11 +54,13 @@ class escucha {
 			letter.events.onInputUp.add(this.verify, this, 0, this.levelData);
 
 			var soundButton = game.add.button(positions[firstPosition][0], positions[firstPosition][1] + 100, 'speaker');
+			soundButton.scale.setTo(scaleRatio, scaleRatio);
 			
 			if (i == 0) {
 				
 				var instructionLabel = game.add.text(game.world.width - 500 , game.world.height-80, 'Encuentra la letra ' + this.letterImageKeys[currentLetter], {fontSize: '50px', fill: '#FFFFFF'});
-			
+				instructionLabel.scale.setTo(scaleRatio, scaleRatio);
+
 			}
 			
 			soundButton.name = this.letterImageKeys[currentLetter];
@@ -71,7 +76,8 @@ class escucha {
 		}
 
 		this.scoreText = this.add.text(16, 16, 'Puntaje: ' + this.levelData.score, { fontSize: '32px', fill: '#FFFFFF'});
-
+		this.scoreText.scale.setTo(scaleRatio, scaleRatio);
+		
 		if (this.levelData.score < 0) {
 
 			this.scoreText.fill = 'red';
