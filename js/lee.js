@@ -1,12 +1,18 @@
+var LETTER_WIDTH = 70,
+	LETTER_HEIGHT = 70;
+
 class lee {
 	
 	create() {
 
 		var positions = [
-			[20,30],
-			[460,40],
-			[100,300],
-			[500,350]
+			[Random.randomLetter(10, game.world.width/2 - LETTER_WIDTH), Random.randomLetter(10, game.world.height/2 - LETTER_HEIGHT)],
+			[Random.randomLetter(game.world.width/2 + 10, game.world.width - (LETTER_WIDTH + 10)), 
+				Random.randomLetter(10, game.world.height/2 - LETTER_HEIGHT)],
+			[Random.randomLetter(10, game.world.width/2 - LETTER_WIDTH), 
+				Random.randomLetter(game.world.height/2 + 10, game.world.height - (LETTER_HEIGHT + 10))],
+			[Random.randomLetter(game.world.width/2 + 10, game.world.width - (LETTER_WIDTH + 10)),
+				Random.randomLetter(game.world.height/2 + 10, game.world.height - (LETTER_HEIGHT + 80))]
 		];
 
 		var sounds = {
