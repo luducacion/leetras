@@ -55,6 +55,7 @@ class lee {
 			letter.input.start(0, true);
 			letter.levelData = this.levelData;
 			letter.events.onInputUp.add(this.verify, this, 0, this.levelData);
+
 			currentLetter = (currentLetter + 1)%totalLetters;
 			firstPosition = (firstPosition + 1)%totalLetters;
 		}
@@ -71,7 +72,7 @@ class lee {
 		} else {
 			
 			// Wrong letter
-			game.state.start('lose');
+			game.state.start('lose', true, false, arguments[3]);
 		}
 	}
 	

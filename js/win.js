@@ -15,6 +15,7 @@ class winState {
 	}
 
 	restart() {
+		
 		game.state.start('gameMaster', true, false, this.levelData);
 	}
 };
