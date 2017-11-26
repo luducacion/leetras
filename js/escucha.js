@@ -14,6 +14,8 @@ class escucha {
 			[500,200]
 		];
 
+		 
+
 		this.sounds = this.levelData.sounds;
 
 		this.letterImageKeys = this.levelData.letterImageKeys;
@@ -31,10 +33,12 @@ class escucha {
 		var currentLetter = this.chosenLetter;
 
 		var firstPosition = Random.randomLetter(lowestLetter, highestLetter-1);
+
+		var currentQuestionBlock = Random.randomLetter(lowestLetter,highestLetter-1);
 		
 		for (var i = 0; i < 4; i++) {
 
-			var letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], this.letterImageKeys[currentLetter]);
+			var letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], "questionMark"+(currentQuestionBlock+1));
 			var soundButton = game.add.button(positions[firstPosition][0] + 30, positions[firstPosition][1] + 100, 'win')
 			
 			if (i == 0) {
@@ -56,6 +60,8 @@ class escucha {
 			currentLetter = (currentLetter + 1)%totalLetters;
 			
 			firstPosition = (firstPosition + 1)%totalLetters;
+
+			currentQuestionBlock = (currentQuestionBlock + 1)%totalLetters;
 		
 		}
 
