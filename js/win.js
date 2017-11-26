@@ -15,7 +15,6 @@ class winState {
 		
 		menuButton.anchor.setTo(0.5,0.5);
 
-
 		var winLabel = game.add.text(80, 80, '¡Ganaste!', {font: '50px Arial', fill: '#00FF00'});
 
 	}
