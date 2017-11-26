@@ -28,11 +28,11 @@ class avalancha {
 		
 		var totalLetters = this.highestLetter;
 
-        this.chosenLetter = Random.randomLetter(this.lowestLetter, this.highestLetter);
+        this.chosenLetter = game.rnd.realInRange(this.lowestLetter, this.highestLetter);
         
         var currentLetter = this.chosenLetter;
 
-        var firstPosition = Random.randomLetter(this.lowestLetter, this.highestLetter);
+        var firstPosition = game.rnd.realInRange(this.lowestLetter, this.highestLetter);
 
         var instructionLabel = game.add.text(game.world.centerX - 160 , game.world.height-80, 'Encuentra la letra ' + this.letterImageKeys[this.chosenLetter], {fontSize: '50px', fill: '#FFFFFF'});
 
@@ -68,7 +68,7 @@ class avalancha {
     // Creates a new downward moving letter sprite at the top of the screen
     addLetter() {
 
-        var letterIndex = Random.randomLetter(this.lowestLetter, this.highestLetter);
+        var letterIndex = game.rnd.realInRange(this.lowestLetter, this.highestLetter);
         
         var nletter = this.letters.create(20 + Math.random() * (game.world.width-100), -70, this.letterImageKeys[letterIndex]);
         
