@@ -15,9 +15,7 @@ game.state.add('escucha', escucha);
 game.state.add('avalancha', avalancha);
 game.state.add('win', winState);
 game.state.add('lose', loseState);
-game.state.add('win2', winState2);
-game.state.add('lose2', loseState2);
 
-// After all of th estates are added, we start the game by calling the
+// After all of the estates are added, we start the game by calling the
 // boot state
 game.state.start('boot');
