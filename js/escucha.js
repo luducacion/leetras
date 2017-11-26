@@ -28,13 +28,13 @@ class escucha {
 		
 		var totalLetters = highestLetter;
 
-		this.chosenLetter = game.rnd.realInRange(lowestLetter, highestLetter);
+		this.chosenLetter = game.rnd.integerInRange(lowestLetter, highestLetter);
 		
 		var currentLetter = this.chosenLetter;
 
-		var firstPosition = game.rnd.realInRange(lowestLetter, highestLetter-1);
+		var firstPosition = game.rnd.integerInRange(lowestLetter, highestLetter-1);
 
-		var currentQuestionBlock = game.rnd.realInRange(lowestLetter,highestLetter-1);
+		var currentQuestionBlock = game.rnd.integerInRange(lowestLetter,highestLetter-1);
 		
 		for (var i = 0; i < 4; i++) {
 

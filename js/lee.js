@@ -12,13 +12,13 @@ class lee {
 	create() {
 		// Random start positions that ensure no overlap, based on splitting the screen into quadrants
 		var positions = [
-			[game.rnd.realInRange(10, game.world.width/2 - LETTER_WIDTH), game.rnd.realInRange(10, game.world.height/2 - LETTER_HEIGHT)],
-			[game.rnd.realInRange(game.world.width/2 + 10, game.world.width - (LETTER_WIDTH + 10)), 
-				game.rnd.realInRange(10, game.world.height/2 - LETTER_HEIGHT)],
-			[game.rnd.realInRange(10, game.world.width/2 - LETTER_WIDTH), 
-				game.rnd.realInRange(game.world.height/2 + 10, game.world.height - (LETTER_HEIGHT + 10))],
-			[game.rnd.realInRange(game.world.width/2 + 10, game.world.width - (LETTER_WIDTH + 10)),
-				game.rnd.realInRange(game.world.height/2 + 10, game.world.height - (LETTER_HEIGHT + 80))]
+			[game.rnd.integerInRange(10, game.world.width/2 - LETTER_WIDTH), game.rnd.integerInRange(10, game.world.height/2 - LETTER_HEIGHT)],
+			[game.rnd.integerInRange(game.world.width/2 + 10, game.world.width - (LETTER_WIDTH + 10)), 
+				game.rnd.integerInRange(10, game.world.height/2 - LETTER_HEIGHT)],
+			[game.rnd.integerInRange(10, game.world.width/2 - LETTER_WIDTH), 
+				game.rnd.integerInRange(game.world.height/2 + 10, game.world.height - (LETTER_HEIGHT + 10))],
+			[game.rnd.integerInRange(game.world.width/2 + 10, game.world.width - (LETTER_WIDTH + 10)),
+				game.rnd.integerInRange(game.world.height/2 + 10, game.world.height - (LETTER_HEIGHT + 80))]
 		];
 		
 		this.sounds = this.levelData.sounds;
@@ -33,11 +33,13 @@ class lee {
 		
 		var totalLetters = highestLetter;
 
-		this.chosenLetter = game.rnd.realInRange(lowestLetter, highestLetter);
+		this.chosenLetter = game.rnd.integerInRange(lowestLetter, highestLetter);
+
+		console.log(this.chosenLetter);
 		
 		var currentLetter = this.chosenLetter;
 
-		var firstPosition = game.rnd.realInRange(lowestLetter, highestLetter-1);
+		var firstPosition = game.rnd.integerInRange(lowestLetter, highestLetter-1);
 		
 		for (var i = 0; i < 4; i++) {
 			
