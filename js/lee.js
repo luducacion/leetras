@@ -4,7 +4,7 @@ var LETTER_WIDTH = 70,
 class lee {
 	
 	create() {
-
+		// Random start positions that ensure no overlap, based on splitting the screen into quadrants
 		var positions = [
 			[Random.randomLetter(10, game.world.width/2 - LETTER_WIDTH), Random.randomLetter(10, game.world.height/2 - LETTER_HEIGHT)],
 			[Random.randomLetter(game.world.width/2 + 10, game.world.width - (LETTER_WIDTH + 10)), 
