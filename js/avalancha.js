@@ -11,10 +11,10 @@ class avalancha {
 
         this.LETTER_VELOCITY = 140; //The velocity at which the letters fall
 
-        this.SPAWN_TIME = 600; // The time win between each letter spawns
+        this.SPAWN_TIME = 600; // The time window between each letter spawn
 
         game.physics.setBoundsToWorld();
-
+        var background = game.add.sprite(0,0,'background1');
         this.letters = game.add.group();
         this.letters.enableBody = true;
         this.letters.physicsBodyType = Phaser.Physics.ARCADE;

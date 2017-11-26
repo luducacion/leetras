@@ -30,6 +30,7 @@ class loadState {
 		game.load.image('restart', 'assets/restart.png');
 		game.load.image('lee', 'assets/lee.png');
 		game.load.image('home', 'assets/home.png');
+		game.load.image('background1', 'assets/background1.jpg');
 		game.load.audio('A', 'assets/audio/A.m4a');
 		game.load.audio('E', 'assets/audio/E.m4a');
 		game.load.audio('I', 'assets/audio/I.m4a');
