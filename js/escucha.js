@@ -15,6 +15,7 @@ class escucha {
 		];
 
 		 
+        var background = game.add.sprite(0,0,'background1');
 
 		this.sounds = this.levelData.sounds;
 

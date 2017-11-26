@@ -20,6 +20,7 @@ class lee {
 			[game.rnd.integerInRange(game.world.width/2 + 10, game.world.width - (LETTER_WIDTH + 10)),
 				game.rnd.integerInRange(game.world.height/2 + 10, game.world.height - (LETTER_HEIGHT + 80))]
 		];
+        var background = game.add.sprite(0,0,'background1');
 		
 		this.sounds = this.levelData.sounds;
 		
