@@ -1,7 +1,7 @@
 class gameMaster {
 
 	init(levelData){
-		console.log(levelData);
+		
 		this.levelData = levelData;
 	}
 
