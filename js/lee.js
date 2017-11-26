@@ -80,7 +80,7 @@ class lee {
 		
 			this.sounds['encuentra'].play();
 			
-			this.sounds['encuentra'].onStop.addOnce( function() {
+			this.sounds['encuentra'].onStop.addOnce(() => {
 				
 				this.sounds[this.letterImageKeys[this.chosenLetter]].play();
 			
