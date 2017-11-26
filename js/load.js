@@ -1,5 +1,5 @@
 
-//var letterImageKeys = ['A','E','I','O','E','F','G','H','I','K','L'];
+var letterImageKeys = ['A','E','I','O','E','F','G','H','I','K','L'];
 
 class loadState {
 
@@ -19,6 +19,7 @@ class loadState {
 		game.load.image('E', 'assets/E.png');
 		game.load.image('I', 'assets/I.png');
 		game.load.image('O', 'assets/O.png');
+		game.load.image('U', 'assets/U.png');
 		game.load.audio('A', 'assets/audio/A.m4a');
 		game.load.audio('E', 'assets/audio/E.m4a');
 		game.load.audio('I', 'assets/audio/I.m4a');

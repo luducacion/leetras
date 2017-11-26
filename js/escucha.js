@@ -18,8 +18,6 @@ class escucha {
 
 		this.letterImageKeys = this.levelData.letterImageKeys;
 
-		console.log
-
 		var letters = game.add.group();
 
 		var letter;

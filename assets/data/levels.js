@@ -1,10 +1,14 @@
 var levels= {
     "escucha" : [
         {
-            "numberOfLetters": 4,
-            "availableLetters": ["A","E","I","O"]
+            "numberOfLetters": 5,
+            "availableLetters": ["A","E","I","O","U"]
+        }
+    ],
+    "lee" : [
+        {
+            "numberOfLetters": 5,
+            "availableLetters": ["A","E","I","O","U"]
         }
     ]
 };
-
-console.log(levels);

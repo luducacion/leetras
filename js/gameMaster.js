@@ -1,14 +1,17 @@
 class gameMaster {
 
 	init(levelData){
+		console.log(levelData);
 		this.levelData = levelData;
 	}
 
 	create(){
 
-		var currentGame = this.levelData.game;
+		var currentGame = this.levelData.currentGame;
+
+		console.log(currentLevel);
 		
-		var currentLevel = this.levelData.level;
+		var currentLevel = this.levelData.currentLevel;
 
 		var letterImageKeys = levels[currentGame][currentLevel].availableLetters;
 
