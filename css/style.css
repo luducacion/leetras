@@ -5,8 +5,6 @@ div#gameDiv {
 
 body{
     margin: 0;
-    background-image: url(../assets/img/webBackground.gif);
-    background-repeat: repeat;
   }
 
 .container{
