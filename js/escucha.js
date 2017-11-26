@@ -67,7 +67,7 @@ class escucha {
 		
 		}
 
-		this.scoreText = this.add.text(16, 16, 'Puntaje: ' + this.levelData.score, { fontSize: '32px', fill: '#F0F'});
+		this.scoreText = this.add.text(16, 16, 'Puntaje: ' + this.levelData.score, { fontSize: '32px', fill: '#FFFFFF'});
 
 		if (this.levelData.score < 0) {
 
