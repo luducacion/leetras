@@ -34,8 +34,6 @@ class lee {
 		var totalLetters = highestLetter;
 
 		this.chosenLetter = game.rnd.integerInRange(lowestLetter, highestLetter);
-
-		console.log(this.chosenLetter);
 		
 		var currentLetter = this.chosenLetter;
 
