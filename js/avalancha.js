@@ -1,13 +1,7 @@
-// Measures time until next letter appears.
-
-var score = 0;
-var scoreText;
 
 class avalancha {
 
     init(levelData) {
-
-        score = 0;
 		
         this.levelData = levelData;
 
@@ -18,7 +12,6 @@ class avalancha {
         this.LETTER_VELOCITY = 140; //The velocity at which the letters fall
 
         this.SPAWN_TIME = 600; // The time win between each letter spawns
-
 
         game.physics.setBoundsToWorld();
 
@@ -46,7 +39,7 @@ class avalancha {
         this.timer = game.time.create(false);
 
         // Initializing the score and scoretext
-        scoreText = this.add.text(16, 16, 'Puntaje: 0', { fontSize: '32px', fill: '#F0F'});
+        this.scoreText = this.add.text(16, 16, 'Puntaje: ' + this.levelData.score, { fontSize: '32px', fill: '#F0F'});
 
         this.start();
         
@@ -98,11 +91,11 @@ class avalancha {
 
         if (sprite.letterId == this.chosenLetter) {
 
-            score += 1;
+            this.levelData.score += 1;
 
         } else {
 
-            score -= 1;
+            this.levelData.score -= 1;
         }
 
         this.sounds[this.letterImageKeys[sprite.letterId]].play();
@@ -114,15 +107,17 @@ class avalancha {
 
     updateScoreText() {
 
-        scoreText.text = 'Puntaje: ' + score;
+        let score = this.levelData.score;
+
+        this.scoreText.text = 'Puntaje: ' + score;
 
         if (score < 0) {
 
-            scoreText.fill = 'red';
+            this.scoreText.fill = 'red';
 
         } else {
 
-            scoreText.fill = 'green';
+            this.scoreText.fill = 'green';
 
         }
 

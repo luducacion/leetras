@@ -15,6 +15,8 @@ class gameMaster {
 
 		var numberOfLetters = levels[currentGame][currentLevel].numberOfLetters;
 
+		let score = this.levelData.score ? this.levelData.score : 0;
+
 		var sounds = {};
 
 		for (let letter of letterImageKeys) {
@@ -30,7 +32,8 @@ class gameMaster {
 			"currentLevel" : currentLevel,
 			"letterImageKeys" : letterImageKeys,
 			"sounds" : sounds,
-			"numberOfLetters" : numberOfLetters
+			"numberOfLetters" : numberOfLetters,
+			"score": score
 		}
 
 		this.start();
