@@ -2,12 +2,6 @@ class menuState {
 	
 	create() {
 		
-		var bg = game.add.tileSprite(game.world.centerX, game.world.centerY, game.world.width, game.world.height, 'tiledBackground');
-		bg.anchor.setTo(0.5,0.5);
-		// Here we display the name of the game. When defining text, the 
-		// first two parameters are x and y positional values, then the
-		// actual text, and then the 'font' defines the font (of course)
-		// and 'fill' refers to the font color.
 		var nameLabel = game.add.text(game.world.centerX -160, 80, 'L E E T R A S', 
 									{ font: '50px Arial', fill: '#ffffff'});
 
