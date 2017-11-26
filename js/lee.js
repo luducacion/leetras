@@ -2,6 +2,12 @@ var LETTER_WIDTH = 70,
 	LETTER_HEIGHT = 70;
 
 class lee {
+
+	init(levelData) {
+		
+				this.levelData = levelData;
+				console.log("init");
+	}
 	
 	create() {
 		// Random start positions that ensure no overlap, based on splitting the screen into quadrants
@@ -14,57 +20,53 @@ class lee {
 			[Random.randomLetter(game.world.width/2 + 10, game.world.width - (LETTER_WIDTH + 10)),
 				Random.randomLetter(game.world.height/2 + 10, game.world.height - (LETTER_HEIGHT + 80))]
 		];
-
-		var sounds = {
-			
-			'A' : game.add.audio('A'),
-			'E' : game.add.audio('E'),
-			'I' : game.add.audio('I'),
-			'O' : game.add.audio('O'),
-			'U' : game.add.audio('U'),
-			'encuentra': game.add.audio('encuentra')
-			
-		};
+		
+		this.sounds = this.levelData.sounds;
+		
+		this.letterImageKeys = this.levelData.letterImageKeys;
 		
 		var letters = game.add.group();
 
 		var letter;
-		var lowestLetter = 0,
-			highestLetter = 3;
+		var lowestLetter = 0;
+		var highestLetter = this.levelData.numberOfLetters - 1;
 		
-			var totalLetters = (highestLetter - lowestLetter)+1;
+		var totalLetters = highestLetter;
 
-		var chosenLetter = Random.randomLetter(lowestLetter, highestLetter);
+		this.chosenLetter = Random.randomLetter(lowestLetter, highestLetter);
 		
-		var currentLetter = chosenLetter;
+		var currentLetter = this.chosenLetter;
 
-		var firstPosition = Random.randomLetter(lowestLetter, highestLetter);
+		var firstPosition = Random.randomLetter(lowestLetter, highestLetter-1);
 		
 		for (var i = 0; i < 4; i++) {
+
+			console.log(firstPosition);
 			
-			letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], letterImageKeys[currentLetter], undefined, undefined, i);
+			letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], this.letterImageKeys[currentLetter], undefined, undefined, i);
 			
 			if (i == 0) {
 				
-				var winLabel = game.add.text(game.world.centerX, game.world.height-80, 'Encuentra la '+letterImageKeys[currentLetter], {font: '50px Times New Roman', fill: '#00FF00'});
+				var winLabel = game.add.text(game.world.centerX, game.world.height-80, 'Encuentra la '+this.letterImageKeys[currentLetter], {font: '50px Times New Roman', fill: '#00FF00'});
 			}
 		
 			// Enable input
 			letter.inputEnabled = true;
 			letter.input.start(0, true);
-			letter.events.onInputUp.add(this.verify);
+			letter.levelData = this.levelData;
+			letter.events.onInputUp.add(this.verify, this, 0, this.levelData);
 			currentLetter = (currentLetter + 1)%totalLetters;
 			firstPosition = (firstPosition + 1)%totalLetters;
 		}
 
-		this.start(sounds, chosenLetter);
+		this.start();
 	}
 
-	verify(sprite, pointer) {
+	verify(sprite, pointer, levelData) {
 		
 		if (sprite.z == 0) {
 			// Winning letter
-			game.state.start('win');
+			game.state.start('win', true, false, arguments[3]);
 		
 		} else {
 			
@@ -73,13 +75,13 @@ class lee {
 		}
 	}
 	
-	start(sounds, chosenLetter) {
+	start() {
 		
-			sounds['encuentra'].play();
+			this.sounds['encuentra'].play();
 			
-			sounds['encuentra'].onStop.addOnce( function() {
+			this.sounds['encuentra'].onStop.addOnce( function() {
 				
-				sounds[letterImageKeys[chosenLetter]].play();
+				this.sounds[this.letterImageKeys[this.chosenLetter]].play();
 			
 			}, this);
 		}

@@ -1,5 +1,10 @@
 class escucha {
 
+	init(levelData) {
+
+		this.levelData = levelData;
+	}
+
 	create() {
 
 		var positions = [
@@ -9,45 +14,38 @@ class escucha {
 			[500,200]
 		];
 
-		var sounds = {
-			
-			'A' : game.add.audio('A'),
-			'E' : game.add.audio('E'),
-			'I' : game.add.audio('I'),
-			'O' : game.add.audio('O'),
-			'U' : game.add.audio('U'),
-			'encuentra': game.add.audio('encuentra')	
-		
-		};
+		this.sounds = this.levelData.sounds;
+
+		this.letterImageKeys = this.levelData.letterImageKeys;
 
 		var letters = game.add.group();
 
 		var letter;
-		var lowestLetter = 0,
-			highestLetter = 3;
+		var lowestLetter = 0;
+		var highestLetter = this.levelData.numberOfLetters - 1;
 		
-		var totalLetters = (highestLetter - lowestLetter)+1;
+		var totalLetters = highestLetter + 1;
 
-		var chosenLetter = Random.randomLetter(lowestLetter, highestLetter);
+		this.chosenLetter = Random.randomLetter(lowestLetter, highestLetter);
 		
-		var currentLetter = chosenLetter;
+		var currentLetter = this.chosenLetter;
 
 		var firstPosition = Random.randomLetter(lowestLetter, highestLetter);
 		
 		for (var i = 0; i < 4; i++) {
 
-			var letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], letterImageKeys[currentLetter]);
+			var letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], this.letterImageKeys[currentLetter]);
 			var soundButton = game.add.button(positions[firstPosition][0] + 20, positions[firstPosition][1] + 100, 'win')
 			
 			if (i == 0) {
 				
-				var winLabel = game.add.text(game.world.centerX, game.world.height-80, 'Encuentra la '+letterImageKeys[currentLetter], {font: '50px Times New Roman', fill: '#00FF00'});
+				var winLabel = game.add.text(game.world.centerX, game.world.height-80, 'Encuentra la '+this.letterImageKeys[currentLetter], {font: '50px Times New Roman', fill: '#00FF00'});
 			
 			}
 			
-			soundButton.name = letterImageKeys[currentLetter];
+			soundButton.name = this.letterImageKeys[currentLetter];
 			
-			soundButton.onInputUp.add((button)=> sounds[button.name].play() ,this);
+			soundButton.onInputUp.add((button)=> this.sounds[button.name].play() ,this);
 
 			letter.inputEnabled = true;
 			
@@ -61,7 +59,7 @@ class escucha {
 		
 		}
 
-		this.start(sounds, chosenLetter);
+		this.start();
 
 	}
 
@@ -80,13 +78,13 @@ class escucha {
 		}
 	}
 
-	start(sounds, chosenLetter) {
+	start() {
 		
-        sounds['encuentra'].play();
+        this.sounds['encuentra'].play();
         
-        sounds['encuentra'].onStop.addOnce( function() {
+        this.sounds['encuentra'].onStop.addOnce( function() {
             
-            sounds[letterImageKeys[chosenLetter]].play();
+            this.sounds[this.letterImageKeys[this.chosenLetter]].play();
         
         }, this);
     }
