@@ -1,6 +1,6 @@
 
 
-var game = new Phaser.Game(640, 480, Phaser.AUTO, 'gameDiv');
+var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, 'gameDiv');
 
 // Here we add each state. We give it a casual name that we use when 
 // calling it (i.e. 'boot'), and an official name that we use when
