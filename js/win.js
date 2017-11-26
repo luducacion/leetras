@@ -10,10 +10,12 @@ class winState {
 		bg.anchor.setTo(0.5,0.5);
 		var restartButton = game.add.button(game.world.centerX - 100 , game.world.centerY, 'restart', this.restartGame, this);
 		restartButton.anchor.setTo(0.5,0.5);
+		restartButton.scale.setTo(2,2);
 
-		var menuButton = game.add.button(game.world.centerX + 100 , game.world.centerY, 'startButton', this.goToMainMenu, this);
+		var menuButton = game.add.button(game.world.centerX + 100 , game.world.centerY, 'home', this.goToMainMenu, this);
 		
 		menuButton.anchor.setTo(0.5,0.5);
+		menuButton.scale.setTo(2,2);
 
 		var winLabel = game.add.text(80, 80, '¡Ganaste!', {font: '50px Arial', fill: '#00FF00'});
 
