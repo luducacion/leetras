@@ -6,6 +6,9 @@ class winState {
 
 	create() {
 
+		var background = game.add.tileSprite(game.world.centerX, game.world.centerY, game.world.width, game.world.height, 'tiledBackground');
+		background.anchor.setTo( 0.5, 0.5);
+
 		var restartButton = game.add.button(game.world.centerX - 120 , game.world.centerY, 'restart', this.restartGame, this);
 		restartButton.anchor.setTo(0.5,0.5);
 

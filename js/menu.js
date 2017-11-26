@@ -2,10 +2,14 @@ class menuState {
 	
 	create() {
 		
+		var background = game.add.tileSprite(game.world.centerX, game.world.centerY, game.world.width, game.world.height, 'tiledBackground');
+		background.anchor.setTo(0.5,0.5);
+		
 		var nameLabel = game.add.text(game.world.centerX -160, 80, 'L E E T R A S', 
 									{ font: '50px Arial', fill: '#ffffff'});
 
 		// Start Game 1
+		
 		var startGame1 = game.add.button(game.world.centerX - 100 , game.world.centerY, 'lee');
 		startGame1.selectedGame = "lee";
 		startGame1.anchor.x = 0.5;
