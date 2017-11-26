@@ -1,5 +1,5 @@
 
-var letterImageKeys = ['A','E','I','O','E','F','G','H','I','K','L'];
+//var letterImageKeys = ['A','E','I','O','E','F','G','H','I','K','L'];
 
 class loadState {
 

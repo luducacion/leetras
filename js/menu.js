@@ -25,7 +25,8 @@ class menuState {
 		startGame2.selectedGame = "escucha";
 		startGame2.anchor.x = 0.5;
 		startGame2.anchor.y = 0.5;
-		startGame2.onInputDown.add((button) => game.state.start(button.selectedGame),this);
+		var levelData = {"game": "escucha", level: 0};
+		startGame2.onInputDown.add((button) => game.state.start('gameMaster', true, false, levelData),this);
 
 		// Start Game 3
 		var startGame3 = game.add.button(game.world.centerX, game.world.centerY + 100, 'startButton');
