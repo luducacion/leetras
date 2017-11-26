@@ -66,6 +66,18 @@ class escucha {
 		
 		}
 
+		this.scoreText = this.add.text(16, 16, 'Puntaje: ' + this.levelData.score, { fontSize: '32px', fill: '#F0F'});
+
+		if (this.levelData.score < 0) {
+
+			this.scoreText.fill = 'red';
+
+		} else if(this.levelData.score > 0) {
+
+			this.scoreText.fill = 'green';
+
+		}
+
 		this.start();
 
 	}
@@ -75,13 +87,27 @@ class escucha {
 		if (sprite.z == 0) {
 			
 			// Winning letter
-			
-			game.state.start('win', true, false, arguments[3]);
+			this.levelData.score += 1;
+
 		} else {
 			
 			// Wrong letter
+			this.levelData.score -= 1;
+		}
+
+		this.winCondition();
+	}
+
+	winCondition() {
+
+		if (this.levelData.score >= 5) {
 			
-			game.state.start('lose', true, false, arguments[3]);
+			this.Win();
+
+		} else {
+
+			game.state.start('gameMaster', true, false, this.levelData);
+			
 		}
 	}
 
@@ -94,6 +120,12 @@ class escucha {
             this.sounds[this.letterImageKeys[this.chosenLetter]].play();
         
         }, this);
+	}
+	
+	Win() {
+
+        game.state.start('win', true, false, this.levelData);
+
     }
 		
 };

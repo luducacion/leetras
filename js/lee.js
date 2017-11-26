@@ -6,7 +6,7 @@ class lee {
 	init(levelData) {
 		
 				this.levelData = levelData;
-				console.log("init");
+
 	}
 	
 	create() {
@@ -40,8 +40,6 @@ class lee {
 		var firstPosition = Random.randomLetter(lowestLetter, highestLetter-1);
 		
 		for (var i = 0; i < 4; i++) {
-
-			console.log(firstPosition);
 			
 			letter = letters.create(positions[firstPosition][0], positions[firstPosition][1], this.letterImageKeys[currentLetter], undefined, undefined, i);
 			
@@ -60,31 +58,67 @@ class lee {
 			firstPosition = (firstPosition + 1)%totalLetters;
 		}
 
+		this.scoreText = this.add.text(16, 16, 'Puntaje: ' + this.levelData.score, { fontSize: '32px', fill: '#F0F'});
+
+		if (this.levelData.score < 0) {
+
+			this.scoreText.fill = 'red';
+
+		} else if(this.levelData.score > 0) {
+
+			this.scoreText.fill = 'green';
+
+		}
+
 		this.start();
 	}
 
-	verify(sprite, pointer, levelData) {
+	verify(sprite, pointer) {
 		
 		if (sprite.z == 0) {
+			
 			// Winning letter
-			game.state.start('win', true, false, arguments[3]);
-		
+			this.levelData.score += 1;
+
 		} else {
 			
 			// Wrong letter
-			game.state.start('lose', true, false, arguments[3]);
+			this.levelData.score -= 1;
+		}
+
+		this.winCondition();
+	}
+
+	winCondition() {
+
+
+		if (this.levelData.score >= 5) {
+			
+			this.Win();
+
+		} else {
+
+			game.state.start('gameMaster', true, false, this.levelData);
+			
 		}
 	}
 	
 	start() {
 		
-			this.sounds['encuentra'].play();
+		this.sounds['encuentra'].play();
+		
+		this.sounds['encuentra'].onStop.addOnce(() => {
 			
-			this.sounds['encuentra'].onStop.addOnce(() => {
-				
-				this.sounds[this.letterImageKeys[this.chosenLetter]].play();
-			
-			}, this);
-		}
+			this.sounds[this.letterImageKeys[this.chosenLetter]].play();
+		
+		}, this);
+
+	}
+
+	Win() {
+		
+		game.state.start('win', true, false, this.levelData);
+		
+	}
 
 }
